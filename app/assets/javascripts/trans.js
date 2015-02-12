@@ -1,18 +1,38 @@
 $(document).ready(function() {
   //get_data format json
-  var yml_data = null;
+  var yml_data_before = null;
+  var yml_data_after = null;
   var tree = $('#yml-list');
-  $.get('/get_en').success(function(data) {
-    yml_data = data;
-    tree.html(createMenu(yml_data));
-  });
+  
+  function getJsonData() { 
+    $.get('/get_en').success(function(data) {
+      yml_data_before = data;
+      tree.html(createMenu(yml_data_before));
+    });
+  };
 
+  function changeJsonData(obj, key, val) {
+    for(i in obj) {
+      if (!obj.hasOwnProperty(i)) continue;
+      if (typeof(obj[i]) == 'object') {
+         changeJsonData(obj[i],key,val);
+      } else if (i == key) {
+        obj[i] = val;
+      }
+    }
+    return obj;
+  }
   function createMenu(Jobject) {
-    function makeInput(value) {
-      var input_html = ''
-      input_html += "<input type='text' name='value' value='"
-      input_html += value
-      
+    function makeForm(value) {
+      var html = ''
+      html +="<div class='translation'>"
+      html +=  "<textarea name='value'>"
+      html +=  value
+      html +=  "</textarea>"
+      html +=  "<input class='save' type='submit' value='제출'></input>"
+      html +="</div>"
+
+      return html
     }
     function makeTag(data, initTag) {
       if(!initTag){
@@ -26,13 +46,15 @@ $(document).ready(function() {
         }
         if(val != null) {
           if(typeof val === "object"){
-            html += "<li>";
-            html += ""+key +":" + makeTag(val,false);
-            html += "</li>";
+            html += "<li><h4>";
+            html += key;
+            html += "</h4></li>";
+            html += makeTag(val,false);
           }else {
-            html += "<li>";
-            html += ""+key +": "+ "<input type='text' value='" + val + "'></input>";
-            html += "</li>";
+            html += "<li><h4>";
+            html += key
+            html += "</h4></li>";
+            html += makeForm(val);
           }
         }
       });
@@ -48,4 +70,20 @@ $(document).ready(function() {
       html += ""+Jobject;
     return html;
   }
+
+  window.onload = function() {
+    $('#yml-list').on('click', '.save', function() {
+      var key = $(this).parent().prev().text();
+      var value = $(this).parent().find('textarea').val();
+      yml_data_after = changeJsonData(yml_data_before, key, value);
+
+      $.post('/save_en', {
+        data: yml_data_after,
+      }).done(function() {
+        getJsonData();
+        alert("성공");
+      });
+    });
+  }
+  getJsonData();
 });

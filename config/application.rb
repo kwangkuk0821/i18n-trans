@@ -17,8 +17,9 @@ module I18nProject
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    config.i18n.load_path += Dir[Rails.root.join('lib', 'locales', '*.{rb,yml}')]
+    config.i18n.load_path += Dir[Rails.root.join('locales', '*.{rb,yml,yaml}')]
     config.i18n.default_locale = :ko
+    config.action_controller.allow_forgery_protection = false
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     #config.active_record.raise_in_transactional_callbacks = true
