@@ -1,0 +1,12 @@
+<h1>Trans#index</h1>
+<p>Find me in app/views/trans/index.html.erb</p>
+
+<h1>trans</h1>
+  <h3><%=t ("회사.이명")%></h3>
+<h1>trans</h1>
+  <h3><%=t :안녕하세요%></h3>
+  <%= I18n.locale %>
+
+<%= form_tag '', :class => 'locale', :method => :get do %>
+  <%= select_tag 'locale', options_for_select(I18n.available_locales, I18n.locale.to_s), :onchange => 'this.form.submit()' %>
+<% end %>
