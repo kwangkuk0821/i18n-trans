@@ -3,9 +3,13 @@ $(document).ready(function() {
   var yml_data_before = null;
   var yml_data_after = null;
   var tree = $('#yml-list');
+  var locale = null;
   
   function getJsonData() { 
-    $.get('/get_en').success(function(data) {
+    locale = $('#locale option:selected').text();
+    $.post('/get_yml',{
+        locale: locale,
+      }).success(function(data) {
       yml_data_before = data;
       tree.html(createMenu(yml_data_before));
     });
@@ -77,7 +81,8 @@ $(document).ready(function() {
       var value = $(this).parent().find('textarea').val();
       yml_data_after = changeJsonData(yml_data_before, key, value);
 
-      $.post('/save_en', {
+      $.post('/save_yml', {
+        locale: locale,
         data: yml_data_after,
       }).done(function() {
         getJsonData();

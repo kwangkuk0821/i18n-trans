@@ -5,23 +5,25 @@ class TransController < ApplicationController
   def index
   end
 
-  def get_data_en
-    yml_file = YAML::load(File.open("locales/en.yml"))
+  def get_data
+    puts I18n.locale
+    yml_file = YAML::load(File.open("locales/#{I18n.locale}.yml"))
     render :json => yml_file
   end
 
-  def save_data_en
+  def save_data
     jsonData = JSON.parse(params[:data].to_json)
     ymlData = jsonData.to_yaml
-    old_file = File.open('locales/en.yml','r');
+    old_file = File.open("locales/#{I18n.locale}.yml",'r');
 
     #Make Backup File
-    FileUtils.cp('locales/en.yml',"locales/en_backup/en#{Time.new.to_s}.yml")
+    FileUtils.cp("locales/#{I18n.locale}.yml","locales/#{I18n.locale}_backup/#{I18n.locale}#{Time.new.to_s}.yml")
     
     #modified translation File
-    File.open( 'locales/en.yml', "w") do |f|
+    File.open( "locales/#{I18n.locale}.yml", "w") do |f|
       f.write(ymlData)
     end
+
     render :text => "ok"
   end
 end

@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
 
+  
   def set_locale
-    puts I18n.available_locales
     if params[:locale].blank?
       I18n.locale = extract_locale_from_accept_language_header
     elsif I18n.available_locales.include? params[:locale].to_sym
@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     else
       I18n.locale = I18n.default_locale
     end
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
   end
 
   def extract_locale_from_accept_language_header
