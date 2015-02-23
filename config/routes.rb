@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get '/' => 'trans#index'
+  get '/test' => 'trans#index'
   post '/get_yml' => 'trans#get_data'
   post '/save_yml' => 'trans#save_data'
+
+  get '/' => 'trans#main'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

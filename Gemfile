@@ -33,3 +33,5 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'i18n'
+
+gem 'bootstrap-select-rails'

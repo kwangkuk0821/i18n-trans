@@ -7,12 +7,11 @@
   <h3><%=t :hello%></h3>
   <%= I18n.locale %>
 
+
 <%= form_tag '', :class => 'locale', :method => :get do %>
   <%= select_tag 'locale', options_for_select(I18n.available_locales, I18n.locale.to_s), :onchange => 'this.form.submit()' %>
 <% end %>
-<br>
-<br>
-<br>
+<hr>
 
 <div id="yml-list">
 </div>

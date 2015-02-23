@@ -19,7 +19,7 @@ $(document).ready(function() {
     for(i in obj) {
       if (!obj.hasOwnProperty(i)) continue;
       if (typeof(obj[i]) == 'object') {
-         changeJsonData(obj[i],key,val);
+        changeJsonData(obj[i],key,val);
       } else if (i == key) {
         obj[i] = val;
       }
@@ -33,7 +33,7 @@ $(document).ready(function() {
       html +=  "<textarea name='value'>"
       html +=  value
       html +=  "</textarea>"
-      html +=  "<input class='save' type='submit' value='제출'></input>"
+      html +=  "<input class='save btn btn-default' type='submit' value='제출'></input>"
       html +="</div>"
 
       return html
@@ -55,9 +55,9 @@ $(document).ready(function() {
             html += "</h4></li>";
             html += makeTag(val,false);
           }else {
-            html += "<li><h4>";
-            html += key
-            html += "</h4></li>";
+            html += "<li class='key'><h5>";
+            html += key;
+            html += "</h5></li>";
             html += makeForm(val);
           }
         }
@@ -79,6 +79,7 @@ $(document).ready(function() {
     $('#yml-list').on('click', '.save', function() {
       var key = $(this).parent().prev().text();
       var value = $(this).parent().find('textarea').val();
+      console.log(key);
       yml_data_after = changeJsonData(yml_data_before, key, value);
 
       $.post('/save_yml', {
