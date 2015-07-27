@@ -11,7 +11,6 @@ class TransController < ApplicationController
   end
 
   def save_data
-    puts I18n.locale
     jsonData = JSON.parse(params[:data].to_json)
     ymlData = jsonData.to_yaml
     old_file = File.open("locales/#{I18n.locale}.yml",'r');

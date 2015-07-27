@@ -15,3 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore all Locale Backup files
+locales/en_backup
+locales/ko_backup

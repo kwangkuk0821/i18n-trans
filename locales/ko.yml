@@ -1,3 +1,356 @@
 ko:
-  hello: "안녕하세요!"
-  hi: "안녕!"
+  views:
+    home:
+      index:
+        message: "당신이 상상하던 서비스를 만들 수 있는 <b>가장 빠른 방법</b>"
+    mypage:
+      index:
+        curriculum: "커리큘럼"
+        new_message: "새로운 소식"
+        no_message: "새로운 소식이 없습니다."
+        expriation: "남은 결제 기간"
+        explain_expriation: "%{expriation}에 만료됩니다."
+      sandbox:
+        dashboard: "대시보드"
+        coding: "코딩"
+        purchase: "구매"
+      edit_info:
+        edit_profile: "회원정보수정"
+        placeholder:
+          name: "* 이름"
+          new_password: "* 새 비밀번호"
+          new_password_confirmation: "* 새 비밀번호 확인"
+          current_password: "* 현재 비밀번호"
+        submit:
+          name: "닉네임 변경"
+          password: "비밀번호 변경"
+    study:
+      curriculum_detail: "커리큘럼 보기"
+      learn: "수업 듣기"
+      purchased_curriculum:
+        last_time: "마지막으로 코딩한 지 <span class='last-time'>%{time}</span> 지났습니다"
+        progress: "강의 진행률"
+        continue: "이어듣기"
+      detail:
+        purchase: "구매하기"
+        intro: "수업 소개"
+        content: "수업 내용"
+        return: "돌아가기"
+      content_tab:
+        count_part: "<b>PARTS</b>로 구성되어 있습니다."
+    qna:
+      return: "돌아가기"
+      detail:
+        to_list: "목록으로"
+        modify: "수정"
+        delete: "삭제"
+        post_reply: "답변 달기"
+        comment_reply: "답글 달기"
+        total_reply_count: "전체 답변 수"
+      warning_page:
+        error: "잘못된 접근입니다."
+      question_list:
+        no_search: "검색 결과가 없습니다."
+      question:
+        new:
+          preview: "미리보기"
+          tag: "태그"
+          question_reply: "질문 등록하기"
+        modify:
+          question_modify: "수정하기"
+      answer:
+        new:
+          answer_reply: "답변 달기" 
+        modify:
+          answer_modify: "답변 수정"
+      reply:
+        new: 
+          comment_reply: "답글 달기"
+        modify:
+          comment_modify: "답글 수정"
+    wiki:
+      index:
+        no_search: "검색 결과가 없습니다."
+      404_page:
+        no_wiki: "위키가 존재하지 않습니다."
+      detail:
+        modify: "수정"
+        delete: "삭제"
+      modify:
+        placeholder:
+          title: "* 제목"
+    devise:
+      registrations:
+        new:
+          toycode_register: "토이코드 회원가입"
+          enroll_profile_image: "프로필 이미지 등록"
+          placeholder:
+            name: "이름"
+            email: "이메일 주소"
+            password: "비밀번호"
+            password_confirmation: "비밀번호 확인"
+          already_exist: "이미 가입하셨나요?"
+      sessions:
+        new:
+          toycode_login: "토이코드 로그인"
+          forget_password: "비밀번호를 잊어버리셨나요?"
+      passwords:
+        new:
+          search_password: "비밀번호 찾기"
+          ask_forget_password: "비밀번호를 잊어버리셨나요?"
+          placeholder:
+            input_email: "가입할 때 입력한 이메일 주소를 입력해주세요."
+          submit: "에메일 인증"
+        edit:
+          password_change: "비밀번호 변경"
+          email_authentication_success: "이메일 인증에 성공하였습니다."
+          input_new_password: "변경할 비밀번호를 입력해주세요."
+          placeholder:
+            new_password: "* 새 비밀번호"
+            new_password_confirmation: "* 새 비밀번호 확인"
+          submit: "비밀번호 변경"
+    shadowcoding:
+      project:
+        preview: "미리보기"
+        edit_mode: "연습 모드입니다. 코드를 마음대로 수정해보세요."
+    sandbox:
+      project:
+        explain_timemachine: "현재 작업중인 샌드박스의 시점을 기록하고,<br>기록한 시점으로 다시 되돌릴 수 있는 기능입니다."
+      timemachines:
+        backup: "기록하기"
+        cover: "덮어씌우기"
+        load: "불러오기"
+        back: "뒤로가기"
+        intro:
+          sub_title: "현재 파일들을 기록하거나 기록한 백업 파일로 되돌아 갈 수 있습니다."
+        backup:
+          sub_title: "현재 시점에 대한 설명을 적어주세요.<br>* 첫 번째 줄(제목), 두 번째 줄 이상(내용)"
+          placeholder: " * 첫 번째 줄은 제목입니다..."
+        backup_detail:
+          sub_title: "* 총 10개의 타임머신 슬롯이 가득 찼습니다.<br>과거의 슬롯 중 하나를 선택하여 대체 해주세요."
+        load_detail:
+          sub_title: "불러올 시점이 선택되지 않았습니다."
+          alert: "* 위의 백업을 정말로 불러오시겠습니다.<br>현재 진행중인 작업은 위의 백업파일 기준으로 수정/삭제 됩니다."
+        cover_check:
+          sub_title: "삭제할 시점이 선택되지 않았습니다."
+          alert: "* 위의 백업을 정말로 덮어 씌우시겠습니다.<br>덮어 씌우시면 더이상 복원하실 수 없습니다."
+    dashboard:
+      index:
+        title: "사이트 프로필 수정"
+        name: "사이트 이름"
+        intro: "사이트 소개"
+        current_storage: "현재 용량"
+        remain_storage: "현재 남은 용량은"
+        launching_time: "현재 사이트 런칭 후 <span class='last_time'>%{date}일</span> 지났습니다."
+        domain: "도메인 네임 시스템(Domain Name System, DNS)는 호스트의 도메인 이름을 호스트의 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 하기 위해 개발되었다. 특정 컴퓨터(또는 네트워크로 연결된 임의의 장치)의 주소를 찾기 위해, 사람이 이해하기 쉬운 도메인 이름을 숫자로 된 식별 번호(IP 주소)로 변환해준다. 도메인 네임 시스템은 흔히 '전화번호부'에 비유된다. 인터넷 도메인 주소 체계로서 TCP/IP의 응용에서, www.example.com과 같은 주 컴퓨터의 도메인 이름을 192.168.1.0과 같은 IP 주소로 변환하고 라우팅 정보를 제공하는 분산형 데이터베이스 시스템이다."
+    image_upload:
+      upload_modal:
+        list: "업로드된 이미지 목록"
+    layouts:
+      placeholder:
+        search: "검색어를 입력하세요."
+      qna:
+        ask_question: "질문하기"
+    modal:
+      crop_modal:
+        zoom_in: "확대"
+        zoom_out: "축소"
+      image_upload:
+        title: "이미지 업로드"
+        image_choose: "목록에 이미지 추가"
+    shared:
+      mypage: "마이 페이지"
+      logout: "로그아웃"
+      sign_in: "로그인"
+      sign_up: "회원가입"
+
+
+
+  date:
+    abbr_day_names:
+    - 일
+    - 월
+    - 화
+    - 수
+    - 목
+    - 금
+    - 토
+    abbr_month_names:
+    - 1월
+    - 2월
+    - 3월
+    - 4월
+    - 5월
+    - 6월
+    - 7월
+    - 8월
+    - 9월
+    - 10월
+    - 11월
+    - 12월
+    day_names:
+    - 일요일
+    - 월요일
+    - 화요일
+    - 수요일
+    - 목요일
+    - 금요일
+    - 토요일
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y년 %m월 %d일 (%a)"
+      short: "%m/%d"
+    month_names:
+    - 
+    - 1월
+    - 2월
+    - 3월
+    - 4월
+    - 5월
+    - 6월
+    - 7월
+    - 8월
+    - 9월
+    - 10월
+    - 11월
+    - 12월
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 약 한 시간
+        other: 약 %{count}시간
+      about_x_months:
+        one: 약 한 달
+        other: 약 %{count}달
+      about_x_years:
+        one: 약 일 년
+        other: 약 %{count}년
+      almost_x_years:
+        one: 일 년 이하
+        other: "%{count}년 이하"
+      half_a_minute: 30초
+      less_than_x_minutes:
+        one: 일 분 이하
+        other: "%{count}분 이하"
+      less_than_x_seconds:
+        one: 일 초 이하
+        other: "%{count}초 이하"
+      over_x_years:
+        one: 일 년 이상
+        other: "%{count}년 이상"
+      x_days:
+        one: 하루
+        other: "%{count}일"
+      x_minutes:
+        one: 일 분
+        other: "%{count}분"
+      x_months:
+        one: 한 달
+        other: "%{count}달"
+      x_seconds:
+        one: 일 초
+        other: "%{count}초"
+    prompts:
+      day: 일
+      hour: 시
+      minute: 분
+      month: 월
+      second: 초
+      year: 년
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: 을(를) 반드시 확인해야 합니다
+      blank: 에 내용을 입력해 주세요
+      confirmation: 은(는) 서로 일치해야 합니다
+      empty: 에 내용을 입력해 주세요
+      equal_to: 은(는) %{count}과 같아야 합니다
+      even: 에 짝수를 입력해 주세요
+      exclusion: 은(는) 이미 예약되어 있는 값입니다
+      greater_than: 은(는) %{count}보다 커야 합니다
+      greater_than_or_equal_to: 은(는) %{count}보다 크거야 같아야 합니다
+      inclusion: 은(는) 목록에 포함되어 있는 값이 아닙니다
+      invalid: 은(는) 올바르지 않은 값입니다
+      less_than: 은(는) %{count}보다 작아야 합니다
+      less_than_or_equal_to: 은(는) %{count}과 작거나 같아야 합니다
+      not_a_number: 에 숫자를 입력해 주세요
+      not_an_integer: 에 정수를 입력해 주세요
+      odd: 에 홀수를 입력해 주세요
+      record_invalid: 데이터 검증에 실패하였습니다. %{errors}
+      taken: 은(는) 이미 존재합니다.
+      too_long: 은(는) %{count}자를 넘을 수 없습니다
+      too_short: 은(는) 적어도 %{count}자를 넘어야 합니다
+      wrong_length: 은(는) %{count}자여야 합니다
+    template:
+      body: '다음 항목에 문제가 발견되었습니다:'
+      header:
+        one: 한 개의 오류가 발생해 %{model}를 저장 할 수 없습니다
+        other: "%{count}개의 오류가 발생해 %{model}를 저장 할 수 없습니다"
+  helpers:
+    select:
+      prompt: 선택해주세요
+    submit:
+      create: 등록
+      submit: 제출
+      update: 갱신
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 원
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: 십억
+          million: 백만
+          quadrillion: 경
+          thousand: 천
+          trillion: 조
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: 바이트
+          gb: 기가바이트
+          kb: 킬로바이트
+          mb: 메가바이트
+          tb: 테라바이트
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ", "
+      two_words_connector: '와(과) '
+      words_connector: ", "
+  time:
+    am: 오전
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y년 %m월 %d일, %H시 %M분 %S초 %Z"
+      short: "%y/%m/%d %H:%M"
+    pm: 오후
