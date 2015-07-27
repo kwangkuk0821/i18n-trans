@@ -3,7 +3,7 @@ en:
   views:
     home:
       index:
-        message: "당신이 상상하던 서비스를 만들 수 있는 <b>가장 빠른 방법</b>"
+        message: "<b>The Simplest Way</b> to create the service you have imagined!"
     mypage:
       index:
         curriculum: "커리큘럼"
